@@ -55,9 +55,9 @@ internal class Board
         if (BoardContents[x, y].Type != GridStatusType.Untouched)
             return "Miss.";
 
-        var ship = GetShipAt((int)x, (int)y);
+        var ship = GetShipAt(x, y);
 
-        if ( ship != null)
+        if ( ship != null )
         {
             BoardContents[x, y].Type = GridStatusType.Hit;
 
@@ -135,7 +135,8 @@ internal class Board
         Console.Write(GetBoardString(showShips));
     }
 
-    // I mean this could also just be a const variable but it doesn't really 
+    // I mean this could also just be a const variable but it doesn't really matter.
+    // It's nice to have as a function as we may want to make it more complicated later.
     private string GetHorizontalLine()
     {
         return "---------------------------------------------\n";
