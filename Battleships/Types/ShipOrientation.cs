@@ -15,7 +15,7 @@ internal struct ShipOrientation
 
     private static Random Randomiser = new(); // No point constantly creating this.
 
-    public static ShipOrientationType ParseShipOrientation(string input)
+    public static ShipOrientationType? ParseShipOrientation(string input)
     {
         switch (input.ToLower())
         {
@@ -28,7 +28,7 @@ internal struct ShipOrientation
             case "horizontal":
                 return ShipOrientationType.Horizontal;
             default:
-                throw new Exception($"unrecognised ship orientation type {input}");
+                return null;
         }
     }
 

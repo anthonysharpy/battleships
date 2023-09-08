@@ -43,17 +43,17 @@ static class Program
     {
         var shipOrientation = InputController.GetUserInput($"Your {nthDescriptor} ship is a " +
             $"{ship.Definition.Name.ToLower()}, which is {ship.Definition.Length} units long. Please enter whether you would like to "+
-            "place this ship vertically (v) or horizontally (h): ", InputController.ParseOrientationString);
+            "place this ship vertically (v) or horizontally (h): ", ShipOrientation.ParseShipOrientation);
 
         var shipPosition = InputController.GetUserInput("Please enter the coordinates you would like to place it at "+
-            "(e.g. B2, E7) - this will be the topmost or leftmost point of the boat: ", InputController.ParseVector2String);
+            "(e.g. B2, E7) - this will be the topmost or leftmost point of the boat: ", Vector2Int.ParseVector2Int);
 
         ship.SetPosition(shipPosition.Value, shipOrientation.Value);
 
         while (!PlayerBoard.TryAddShip(ship))
         {
             shipPosition = InputController.GetUserInput("Your ship doesn't fit there, please choose somewhere else: ",
-                InputController.ParseVector2String);
+                Vector2Int.ParseVector2Int);
             ship.SetPosition(shipPosition.Value, shipOrientation.Value);
         }
     }
@@ -65,7 +65,7 @@ static class Program
             AIBoard.Print(false);
 
             var strikePosition = InputController.GetUserInput("This is your opponent's board. Where would you like to aim next?: ",
-                    InputController.ParseVector2String).Value;
+                    Vector2Int.ParseVector2Int).Value;
             Console.WriteLine($"You attacked {strikePosition.ToCellCoordinate()}.");
             Console.WriteLine(AIBoard.AttackCell(strikePosition.X, strikePosition.Y));
 

@@ -28,7 +28,7 @@ public class Vector2IntTests
         {
             try
             {
-                var result = Vector2Int.ParseVector2Int(test.Key);
+                var result = Vector2Int.ParseVector2Int(test.Key).Value;
                 Assert.IsTrue(test.Value.Equals(result));
             }
             catch

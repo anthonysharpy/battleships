@@ -35,24 +35,25 @@ internal struct Vector2Int
         return $"{StringHelpers.NthLetterOfAlphabet(Y + 1).ToString().ToUpper()}{X + 1}";
     }
 
-    public static Vector2Int ParseVector2Int(string input)
+    public static Vector2Int? ParseVector2Int(string input)
     {
         if (input == null || input.Length < 2)
-            throw new Exception($"invalid coordinate string {input}");
+            return null;
 
         var row = StringHelpers.LetterToAlphabetNth(input[0]);
 
         input = input.Substring(1);
 
-        // We already throw (and catch) a bunch of exceptions from this function so there is
-        // no need to use TryParse.
-        var column = int.Parse(input) - 1;
+        if (!int.TryParse(input, out int column))
+            return null;
+
+        column--;
 
         if (row < 0 || row > 9)
-            throw new Exception($"invalid row index {row}");
+            return null;
 
         if (column < 0 || column > 9)
-            throw new Exception($"invalid column index {column}");
+            return null;
 
         return new Vector2Int(column, row);
     }

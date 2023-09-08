@@ -22,36 +22,4 @@ internal static class InputController
 
         return result;
     }
-
-    public static ShipOrientationType? ParseOrientationString(string orientation)
-    {
-        ShipOrientationType? result;
-
-        try
-        {
-            result = ShipOrientation.ParseShipOrientation(orientation);
-        }
-        catch
-        {
-            return null;
-        }
-
-        return result;
-    }
-
-    public static Vector2Int? ParseVector2String(string vector2String)
-    {
-        Vector2Int? result;
-
-        try
-        {
-            result = Vector2Int.ParseVector2Int(vector2String);
-        }
-        catch
-        {
-            return null;
-        }
-
-        return result;
-    }
 }
