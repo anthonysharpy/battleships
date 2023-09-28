@@ -46,7 +46,7 @@ This is a valid point. I have refactored the program so as not to use exceptions
 
 >Several tests like TryAddShip_MustBeWithinBoard that could use different test cases to cover all scenarios instead of repeating the code again and again.
 
-This is technically true although I think it's a bit picky. Maybe iterating over a test table with a loop would have worked _slightly_ better here. But I think the test as it is does a good job of testing most of the scenarios, and no doubt I was influenced by the fact that this is not a serious application. Moreover, I don't think it's good practice to spend ages writing tests covering every imaginable scenario for every function in the codebase. I think you should focus most of your efforts on the critical parts. 
+This is technically true although I think it's a bit picky. Maybe iterating over a test table with a loop would have worked _slightly_ better here. But I think the test as it is does a good job of testing most of the scenarios, and no doubt I was influenced by the fact that this is not a serious application. Moreover, I don't think it's good practice to spend ages writing tests covering every imaginable scenario for every function in the codebase (Unless you're programming a bank API or a nuclear bomb!). I think you should focus most of your efforts on the critical parts. 
 
 Also, given that it is a game, one has to realise that at least some of the testing is done via playtesting, not just unit tests, so again, there is no point just writing huge unit tests. The test is only 25 lines long so I think to say 'repeating the code again and again' is exaggerating a bit. Other tests like ToVector2Int_Works do use test tables.
 
