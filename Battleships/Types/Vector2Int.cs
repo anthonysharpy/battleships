@@ -42,6 +42,9 @@ internal struct Vector2Int
 
         var row = StringHelpers.LetterToAlphabetNth(input[0]);
 
+        if (row == null)
+            return null;
+
         input = input.Substring(1);
 
         if (!int.TryParse(input, out int column))
@@ -55,6 +58,6 @@ internal struct Vector2Int
         if (column < 0 || column > 9)
             return null;
 
-        return new Vector2Int(column, row);
+        return new Vector2Int(column, row.Value);
     }
 }

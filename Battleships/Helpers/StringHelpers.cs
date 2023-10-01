@@ -49,7 +49,7 @@ internal static class StringHelpers
     /// Find out what nth letter of the alphabet a given letter is.
     /// Zero-indexed (i.e. A = 0).
     /// </summary>
-    public static int LetterToAlphabetNth(char letter)
+    public static int? LetterToAlphabetNth(char letter)
     {
         // Lowercase letters.
         if (letter >= 97 && letter <= 122)
@@ -59,7 +59,7 @@ internal static class StringHelpers
         if (letter >= 65 && letter <= 90)
             return letter - 65;
 
-        throw new Exception($"unrecognised letter {letter}");
+        return null;
     }
 }
 

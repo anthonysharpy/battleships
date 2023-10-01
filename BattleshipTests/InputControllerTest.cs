@@ -27,14 +27,14 @@ public class InputControllerTests
     [TestMethod]
     public void ParseVector2String_Works()
     { 
-        Assert.IsTrue(Vector2Int.ParseVector2Int("A1").Value.Equals(new Vector2Int(0, 0)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("B2").Value.Equals(new Vector2Int(1, 1)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("b2").Value.Equals(new Vector2Int(1, 1)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("C3").Value.Equals(new Vector2Int(2, 2)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("A4").Value.Equals(new Vector2Int(3, 0)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("a4").Value.Equals(new Vector2Int(3, 0)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("J10").Value.Equals(new Vector2Int(9, 9)));
-        Assert.IsTrue(Vector2Int.ParseVector2Int("G6").Value.Equals(new Vector2Int(5, 6)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("A1")!.Value.Equals(new Vector2Int(0, 0)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("B2")!.Value.Equals(new Vector2Int(1, 1)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("b2")!.Value.Equals(new Vector2Int(1, 1)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("C3")!.Value.Equals(new Vector2Int(2, 2)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("A4")!.Value.Equals(new Vector2Int(3, 0)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("a4")!.Value.Equals(new Vector2Int(3, 0)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("J10")!.Value.Equals(new Vector2Int(9, 9)));
+        Assert.IsTrue(Vector2Int.ParseVector2Int("G6")!.Value.Equals(new Vector2Int(5, 6)));
 
         Assert.IsTrue(Vector2Int.ParseVector2Int("A0") == null);
         Assert.IsTrue(Vector2Int.ParseVector2Int("FF") == null);

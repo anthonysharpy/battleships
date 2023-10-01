@@ -5,8 +5,8 @@ using System.Runtime.CompilerServices;
 
 static class Program
 {
-    private static Board PlayerBoard = new();
-    private static Board AIBoard = new();
+    private static Board _playerBoard = new();
+    private static Board _aiBoard = new();
 
     // We can add more ships or even define new ones.
     public static ShipDefinition[] GameShipDefinition = new[] {
@@ -23,9 +23,9 @@ static class Program
 
     private static void SetupGame()
     {
-        AIController.SetupBoardPieces(AIBoard);
+        AIController.SetupBoardPieces(_aiBoard);
 
-        PlayerBoard.Print(true);
+		_playerBoard.Print(true);
         Console.WriteLine("It is time to setup your ships.");
 
         for (int i = 0; i < GameShipDefinition.Length; i++)
@@ -33,7 +33,7 @@ static class Program
             var ship = new Ship(new Vector2Int(0, 0), GameShipDefinition[i], ShipOrientationType.Vertical);
 
             if (i != 0)
-                PlayerBoard.Print(true);
+				_playerBoard.Print(true);
 
             PlayerSetupShipRoutine(ship, StringHelpers.IntToOrdinal(i+1));
         }      
@@ -48,13 +48,13 @@ static class Program
         var shipPosition = InputController.GetUserInput("Please enter the coordinates you would like to place it at "+
             "(e.g. B2, E7) - this will be the topmost or leftmost point of the boat: ", Vector2Int.ParseVector2Int);
 
-        ship.SetPosition(shipPosition.Value, shipOrientation.Value);
+        ship.SetPosition(shipPosition!.Value, shipOrientation!.Value);
 
-        while (!PlayerBoard.TryAddShip(ship))
+        while (!_playerBoard.TryAddShip(ship))
         {
             shipPosition = InputController.GetUserInput("Your ship doesn't fit there, please choose somewhere else: ",
                 Vector2Int.ParseVector2Int);
-            ship.SetPosition(shipPosition.Value, shipOrientation.Value);
+            ship.SetPosition(shipPosition!.Value, shipOrientation.Value);
         }
     }
 
@@ -62,14 +62,14 @@ static class Program
     {
         while (true)
         {
-            AIBoard.Print(false);
+			_aiBoard.Print(false);
 
             var strikePosition = InputController.GetUserInput("This is your opponent's board. Where would you like to aim next?: ",
-                    Vector2Int.ParseVector2Int).Value;
+                    Vector2Int.ParseVector2Int)!.Value;
             Console.WriteLine($"You attacked {strikePosition.ToCellCoordinate()}.");
-            Console.WriteLine(AIBoard.AttackCell(strikePosition.X, strikePosition.Y));
+            Console.WriteLine(_aiBoard.AttackCell(strikePosition.X, strikePosition.Y));
 
-            if (!AIBoard.AnyShipsLeft())
+            if (!_aiBoard.AnyShipsLeft())
             {
                 Console.WriteLine("Your opponent has no ships left. You win! Thanks for playing!");
                 break;
@@ -77,15 +77,15 @@ static class Program
 
             Console.ReadKey();
 
-            var aiStrikePosition = AIController.GetRandomStrikePositionForBoard(PlayerBoard);
+            var aiStrikePosition = AIController.GetRandomStrikePositionForBoard(_playerBoard);
             var aiAttack = $"Your opponent attacked {aiStrikePosition.ToCellCoordinate()}.";
-            var aiAttackResult = PlayerBoard.AttackCell(aiStrikePosition.X, aiStrikePosition.Y);
+            var aiAttackResult = _playerBoard.AttackCell(aiStrikePosition.X, aiStrikePosition.Y);
 
-            PlayerBoard.Print(true);
+			_playerBoard.Print(true);
             Console.WriteLine(aiAttack);
             Console.WriteLine(aiAttackResult);
 
-            if (!PlayerBoard.AnyShipsLeft())
+            if (!_playerBoard.AnyShipsLeft())
             {
                 Console.WriteLine("You have no ships left. You lose! Thanks for playing!");
                 break;

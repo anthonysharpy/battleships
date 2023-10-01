@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\antho\\Desktop\\b\\battleships\\BattleshipTests\\BattleshipTests.csproj": {}
+    "C:\\Users\\antho\\Desktop\\battleships\\BattleshipTests\\BattleshipTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\Battleships.csproj": {
+    "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\Battleships.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\Battleships.csproj",
+        "projectUniqueName": "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\Battleships.csproj",
         "projectName": "Battleships",
-        "projectPath": "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\Battleships.csproj",
+        "projectPath": "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\Battleships.csproj",
         "packagesPath": "C:\\Users\\antho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\obj\\",
+        "outputPath": "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\antho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\antho\\Desktop\\b\\battleships\\BattleshipTests\\BattleshipTests.csproj": {
+    "C:\\Users\\antho\\Desktop\\battleships\\BattleshipTests\\BattleshipTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antho\\Desktop\\b\\battleships\\BattleshipTests\\BattleshipTests.csproj",
+        "projectUniqueName": "C:\\Users\\antho\\Desktop\\battleships\\BattleshipTests\\BattleshipTests.csproj",
         "projectName": "BattleshipTests",
-        "projectPath": "C:\\Users\\antho\\Desktop\\b\\battleships\\BattleshipTests\\BattleshipTests.csproj",
+        "projectPath": "C:\\Users\\antho\\Desktop\\battleships\\BattleshipTests\\BattleshipTests.csproj",
         "packagesPath": "C:\\Users\\antho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antho\\Desktop\\b\\battleships\\BattleshipTests\\obj\\",
+        "outputPath": "C:\\Users\\antho\\Desktop\\battleships\\BattleshipTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\antho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\Battleships.csproj": {
-                "projectPath": "C:\\Users\\antho\\Desktop\\b\\battleships\\Battleships\\Battleships.csproj"
+              "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\Battleships.csproj": {
+                "projectPath": "C:\\Users\\antho\\Desktop\\battleships\\Battleships\\Battleships.csproj"
               }
             }
           }

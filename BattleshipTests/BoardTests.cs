@@ -315,16 +315,16 @@ public class BoardTests
     {
         Board board = new();
 
-        Ship ship = new(Vector2Int.ParseVector2Int("B5").Value, new ShipDefinition(5, "Test"), ShipOrientationType.Horizontal);
+        Ship ship = new(Vector2Int.ParseVector2Int("B5")!.Value, new ShipDefinition(5, "Test"), ShipOrientationType.Horizontal);
         Assert.IsTrue(board.TryAddShip(ship));
 
-        Ship ship2 = new(Vector2Int.ParseVector2Int("E6").Value, new ShipDefinition(4, "Test"), ShipOrientationType.Vertical);
+        Ship ship2 = new(Vector2Int.ParseVector2Int("E6")!.Value, new ShipDefinition(4, "Test"), ShipOrientationType.Vertical);
         Assert.IsTrue(board.TryAddShip(ship2));
 
-        Ship ship3 = new(Vector2Int.ParseVector2Int("F5").Value, new ShipDefinition(4, "Test"), ShipOrientationType.Horizontal);
+        Ship ship3 = new(Vector2Int.ParseVector2Int("F5")!.Value, new ShipDefinition(4, "Test"), ShipOrientationType.Horizontal);
         Assert.IsFalse(board.TryAddShip(ship3));
 
-        Ship ship4 = new(Vector2Int.ParseVector2Int("A5").Value, new ShipDefinition(4, "Test"), ShipOrientationType.Vertical);
+        Ship ship4 = new(Vector2Int.ParseVector2Int("A5")!.Value, new ShipDefinition(4, "Test"), ShipOrientationType.Vertical);
         Assert.IsFalse(board.TryAddShip(ship4));
     }
 }

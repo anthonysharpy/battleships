@@ -4,15 +4,15 @@ internal class Board
 {
     public GridStatus[,] BoardContents = new GridStatus[10,10];
 
-    private List<Ship> Ships = new();
-    private static Random Randomiser = new(); // No point constantly creating this.
+    private List<Ship> _ships = new();
+    private static Random _randomiser = new(); // No point constantly creating this.
 
     public bool TryAddShip(Ship newShip)
     {
         if (!IsShipPlacementValid(newShip))
             return false;
 
-        Ships.Add(newShip);
+		_ships.Add(newShip);
         return true;
     }
 
@@ -39,12 +39,12 @@ internal class Board
 
     public static Vector2Int GetRandomBoardPosition()
     {
-        return new Vector2Int(Randomiser.Next() % 10, Randomiser.Next() % 10);
+        return new Vector2Int(_randomiser.Next() % 10, _randomiser.Next() % 10);
     }
 
     public bool AnyShipsLeft()
     {
-        return Ships.Any(x => !ShipIsSunk(x));
+        return _ships.Any(x => !ShipIsSunk(x));
     }
 
     /// <summary>
@@ -83,15 +83,15 @@ internal class Board
         return true;
     }
 
-    private Ship GetShipAt(int x, int y)
+    private Ship? GetShipAt(int x, int y)
     {
-        return Ships.SingleOrDefault(ship => ship.DoesOccupySpace(x, y));
+        return _ships.SingleOrDefault(ship => ship.DoesOccupySpace(x, y));
     }
 
     private bool IsShipPlacementValid(Ship ship)
     {
         // Can't overlap other ships.
-        foreach (var existingShip in Ships)
+        foreach (var existingShip in _ships)
             if (existingShip.DoesOccupySpaces(ship.SpacesOccupied))
                 return false;
 

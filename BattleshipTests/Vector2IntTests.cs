@@ -28,7 +28,7 @@ public class Vector2IntTests
         {
             try
             {
-                var result = Vector2Int.ParseVector2Int(test.Key).Value;
+                var result = Vector2Int.ParseVector2Int(test.Key)!.Value;
                 Assert.IsTrue(test.Value.Equals(result));
             }
             catch
@@ -56,7 +56,7 @@ public class Vector2IntTests
 
         foreach (var test in testTable)
         {
-            var result = test.Value.Value.ToCellCoordinate();
+            var result = test.Value!.Value.ToCellCoordinate();
             Assert.IsTrue(test.Key.Equals(result));   
         }
     }

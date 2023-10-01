@@ -5,7 +5,7 @@ internal class Ship
     public Vector2Int Position { get; private set; } // Top-left of the board is 0, 0.
     public ShipOrientationType Orientation { get; private set; }
     public ShipDefinition Definition { get; private set; }
-    public Vector2Int[] SpacesOccupied { get; private set; } // No point recalculating this all the time so let's save it.
+    public Vector2Int[] SpacesOccupied { get; private set; } = { }; // No point recalculating this all the time so let's save it.
 
     public Ship(Vector2Int position, ShipDefinition definition, ShipOrientationType orientation)
     {

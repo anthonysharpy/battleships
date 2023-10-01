@@ -2,8 +2,8 @@
 
 internal static class InputController
 {
-    // The use of generics makes it a bit more complicated, but actually it's a very
-    // convenient way to fetch user input as any desired type, provided a parser method
+    // The use of generics makes it seem a bit more complicated, but actually I think it's
+    // a very convenient way to fetch user input as any desired type, provided a parser method
     // is written for it.
     public static T GetUserInput<T>(string prompt, Func<string, T?> inputParser)
     {

@@ -13,7 +13,7 @@ internal struct ShipOrientation
 {
     public ShipOrientationType Type;
 
-    private static Random Randomiser = new(); // No point constantly creating this.
+    private static Random _randomiser = new(); // No point constantly creating this.
 
     public static ShipOrientationType? ParseShipOrientation(string input)
     {
@@ -34,7 +34,7 @@ internal struct ShipOrientation
 
     public static ShipOrientationType GetRandomOrientation()
     {
-        var n = Randomiser.Next() % 2;
+        var n = _randomiser.Next() % 2;
 
         switch (n)
         {
