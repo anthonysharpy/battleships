@@ -38,7 +38,7 @@ Perhaps they meant that it was supposed to be a game where the player doesn't ha
 
 >Binaries pushed to the repo. No ignore file.
 
-This is true, and this would obviously not be good in a commercial environment, but this was a deliberate choice I made; this is just a demo, so it's a bit unnecessary. I have written plenty of .gitignore files in the past and it didn't ask for this in the task description. That being said I will definitely be careful in future to make sure this is always set-up properly.
+This is true, and while this approach might not be best practice in a commercial environment, it was a deliberate choice for this demo. I am familiar with and have written .gitignore files in the past, and to be fair it didn't ask for this in the task description. That being said I will definitely be careful in future to make sure this is always set-up properly.
 
 >Exception driven flow with "catch all" try: (InputController.ParseVector2String, Vector2Int.ParseVector2Int)
 
@@ -46,7 +46,7 @@ This is a valid point. I have refactored the program so as not to use exceptions
 
 >Several tests like TryAddShip_MustBeWithinBoard that could use different test cases to cover all scenarios instead of repeating the code again and again.
 
-This is technically true although maybe it's a bit picky. Maybe iterating over a test table with a loop would have worked _slightly_ better here. But I think the test as it is does a good job of testing most of the scenarios, and no doubt I was influenced by the fact that this is not a serious application. Moreover, I don't think it's good practice to spend ages writing tests covering every imaginable scenario for every function in the codebase (Unless you're programming something that can never afford to fail like a bank API or a nuclear bomb!). Instead I think you should focus most of your efforts on the critical parts. 
+I see their point here. Maybe iterating over a test table with a loop would have worked _slightly_ better here. But I think the test as it is does a good job of testing most of the scenarios, and no doubt I was influenced by the fact that this is not a serious application. Moreover, I don't think it's good practice to spend ages writing tests covering every imaginable scenario for every function in the codebase (Unless you're programming something that can never afford to fail like a bank API or a nuclear bomb!). Instead I think you should focus most of your efforts on the critical parts. 
 
 Also, given that it is a game, one has to realise that at least some of the testing is done via playtesting, not just unit tests, so again, there is no point just writing huge unit tests. The test is only 25 lines long so I personally wouldn't describe it as 'repeating the code again and again'. Other tests like ToVector2Int_Works do use test tables.
 
