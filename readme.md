@@ -34,7 +34,7 @@ I also received the following feedback. I'm also going to add some of my own tho
 
 My intepretation of the specification was that the task more-or-less required a full game of battleships. The task stated: _Create an application to allow a single human player to play a one-sided game of Battleships against ships placed by the computer._ I don't think the program I wrote is a two-sided game; it is a one-sided game against the computer (I interpreted "one-sided" as meaning "one player").
 
-Perhaps they meant that it was supposed to be a game where the player doesn't have any ships (only the computer does), but if so then I think maybe their task description was just a bit vague. In the task they linked a copy of the official rules of the game Battleships, so this suggested to me that what they wanted was a full version of the game Battleships.
+Perhaps they meant that it was supposed to be a game where the player doesn't have any ships (only the computer does), but if so then I think maybe their task description was a bit vague. In the task they linked a copy of the official rules of the game Battleships, so this suggested to me that what they wanted was a full version of the game Battleships.
 
 >Binaries pushed to the repo. No ignore file.
 
